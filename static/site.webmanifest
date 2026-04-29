@@ -1,0 +1,19 @@
+{
+  "name": "Qiosq",
+  "short_name": "Qiosq",
+  "description": "SaaS de autoatendimento para restaurantes e lanchonetes em tablets Android.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#6D28FF",
+  "icons": [
+    {
+      "src": "/images/qiosq-logo-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
