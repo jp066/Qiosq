@@ -5,13 +5,13 @@
 <section id="planos" class="q-section q-shell q-pricing-section" aria-labelledby="pricing-title">
   <div class="q-pricing-heading">
     <div class="q-section-head">
-      <p class="q-eyebrow">Oferta comercial</p>
-      <h2 id="pricing-title">Um plano único para operar autoatendimento com software.</h2>
-      <p>Mensalidade clara, setup inicial sob escopo e implantação focada no fluxo real da sua operação.</p>
+      <p class="q-eyebrow">Planos</p>
+      <h2 id="pricing-title">Comece o autoatendimento sem investir em totens caros.</h2>
+      <p>Mensalidade clara, implantação sob escopo e configuração baseada no fluxo real do seu restaurante.</p>
     </div>
     <aside class="q-pricing-note" aria-label="Resumo comercial">
       <strong>Hardware não incluso.</strong>
-      <span>Qiosq fornece o software, configuração e onboarding. Tablets e periféricos ficam por conta da operação.</span>
+      <span>A Qiosq fornece o software, configuração e onboarding. Tablets, suportes e periféricos ficam por conta da operação.</span>
     </aside>
   </div>
 

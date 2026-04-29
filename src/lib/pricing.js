@@ -1,7 +1,7 @@
 export const pricingPlans = [
   {
     name: 'Qiosq',
-    audience: 'Plano',
+    audience: 'Autoatendimento para começar sem comprar totem caro',
     price: 'R$ 199',
     period: '/mês',
     annual: {
@@ -10,11 +10,10 @@ export const pricingPlans = [
       upfront: 'ou R$ 1.990 à vista',
       saving: 'Economize 2 meses no plano anual'
     },
-    setup: 'Setup inicial sob escopo: configuração, cardápio, regras e onboarding da equipe.',
-    description:
-      'A infraestrutura SaaS completa para transformar tablets Android existentes em pontos de pedido, pagamento e upsell.',
+    setup: 'Setup inicial sob escopo: cardápio, regras de venda, dispositivos, impressão e treinamento da equipe.',
+    description: 'Transforme tablets Android em pontos de pedido, pagamento e venda adicional para reduzir filas e acelerar sua operação.',
     badge: 'Plano único',
-    cta: 'Solicitar demonstração',
+    cta: 'Quero uma demonstração',
     featured: true,
     features: [
       'Autoatendimento em tablets Android',

@@ -3,15 +3,14 @@
   import { pricingPlans } from '$lib/pricing.js';
 
   const siteUrl = 'https://qiosq.com.br';
-  const pageTitle = 'Qiosq | Totem de Autoatendimento para Restaurantes em Tablets Android';
-  const pageDescription =
-    'Qiosq transforma tablets Android em totens de autoatendimento para restaurantes e lanchonetes com cardápio digital, Pix/NFC, upsell contextual e gestão de pedidos.';
+  const pageTitle = 'Qiosq | Autoatendimento para Restaurantes';
+  const pageDescription = 'Transforme tablets Android em pontos de autoatendimento para reduzir filas, vender mais por pedido e acelerar pagamentos em restaurantes, lanchonetes e operações de alto fluxo.';
   const ogImage = `${siteUrl}/images/qiosq-logo-cropped.png`;
 
   const metrics = [
     { value: '34s', label: 'tempo medio ate pagamento', detail: 'pedido, adicional e Pix no mesmo fluxo' },
-    { value: '+18%', label: 'ticket medio em piloto', detail: 'regras de upsell por categoria e horario' },
-    { value: 'multi', label: 'unidades e marcas', detail: 'arquitetura multitenant desde o primeiro setup' }
+    { value: '+18%', label: 'em pedido médio', detail: 'regras de upsell por categoria e horario' },
+    { value: 'multi', label: 'lojas e dispositivos', detail: 'opere tablets, usuários e unidades em uma única plataforma' }
   ];
 
   const tabletItems = [
@@ -23,53 +22,52 @@
   const operations = [
     { id: '#2048', channel: 'Tablet 03', status: 'Pago', station: 'Chapa', time: '12:42' },
     { id: '#2049', channel: 'Tablet 01', status: 'Novo', station: 'Bar', time: '12:43' },
-    { id: '#2050', channel: 'Tablet 02', status: 'Fila', station: 'Expedicao', time: '12:44' }
+    { id: '#2050', channel: 'Tablet 02', status: 'Fila', station: 'Expedição', time: '12:44' }
   ];
-
   const capabilities = [
     {
       icon: 'tablet',
-      title: 'Autoatendimento em tablets Android',
-      signal: 'Dispositivo ativo',
-      text: 'Transforme dispositivos comuns em pontos de pedido com cardapio, carrinho, pagamento e status.'
-    },
+      title: 'Tablet virando ponto de venda',
+      signal: 'Sem totem proprietário',
+      text: 'Use dispositivos Android para receber pedidos, montar carrinho, confirmar pagamento e acompanhar status.'
+    }
     {
       icon: 'spark',
-      title: 'Checkout inteligente',
-      signal: 'Regra aplicada',
-      text: 'Sugestoes de adicionais, combos e upgrades aparecem no momento certo do pedido.'
-    },
+      title: 'Venda adicional automática',
+      signal: 'Mais ticket médio',
+      text: 'Combos, adicionais e upgrades aparecem no checkout sem depender da abordagem da equipe, apenas do historico do usuário.'
+    }
     {
       icon: 'payment',
-      title: 'Orquestracao de pagamentos',
-      signal: 'Pagamento validado',
-      text: 'Fluxo preparado para Pix, NFC e confirmacao antes de enviar a comanda para producao.'
-    },
+      title: 'Pagamento integrado',
+      signal: 'Pagamento antes da produção',
+      text: 'Pix, NFC e confirmação de pagamento entram no fluxo antes do pedido seguir para a cozinha.'
+    }
     {
       icon: 'tenant',
-      title: 'Operacao multitenant',
-      signal: 'Unidade isolada',
-      text: 'Unidades, marcas, usuarios, permissoes e dispositivos organizados por conta.'
-    },
+      title: 'Controle por unidade',
+      signal: 'Pronto para crescer',
+      text: 'Organize lojas, usuários, dispositivos e permissões sem misturar operações diferentes.'
+    }
     {
       icon: 'queue',
-      title: 'Fila operacional integrada',
+      title: 'Pedido direto para operação',
       signal: 'Comanda roteada',
-      text: 'Pedidos entram em cozinha, bar ou expedicao com status claro e horarios rastreaveis.'
-    },
+      text: 'Pedidos chegam com status claro e menos retrabalho manual.'
+    }
     {
       icon: 'chart',
-      title: 'Dados comerciais acionaveis',
-      signal: 'Leitura em tempo real',
-      text: 'Acompanhe ticket medio, itens mais aceitos, horarios de pico e performance por loja.'
+      title: 'Indicadores que mostram o gargalo',
+      signal: 'Decisão com dados',
+      text: 'Veja pedido médio, itens mais vendidos, horários de pico e desempenho por loja.'
     }
   ];
 
   const workflow = [
-    ['01', 'Configurar unidade', 'Cardapio, impostos, horarios, impressao e regras comerciais por loja.'],
-    ['02', 'Ativar tablets', 'Cada dispositivo recebe identidade, unidade e permissao de operacao.'],
-    ['03', 'Guiar o pedido', 'Cliente escolhe itens, observa detalhes, aceita sugestoes e paga.'],
-    ['04', 'Sincronizar operacao', 'Cozinha, dashboard e relatorios atualizam sem retrabalho manual.']
+    ['01', 'Monte o cardápio', 'Configure produtos, adicionais, combos, horários e regras comerciais por loja.'],
+    ['02', 'Ative os tablets', 'Cada dispositivo recebe unidade, identificação e permissão para operar.'],
+    ['03', 'Cliente pede e paga', 'O pedido acontece no tablet com sugestões automáticas e pagamento integrado.'],
+    ['04', 'Pedido chega na operação', 'Cozinha, balcão e painel acompanham status sem retrabalho manual.']
   ];
 
   const useCases = [
@@ -82,11 +80,11 @@
   ];
 
   const faqs = [
-    ['Qiosq e uma marca de restaurante?', 'Nao. Qiosq e uma plataforma SaaS de infraestrutura operacional para autoatendimento inteligente.'],
-    ['Preciso comprar um totem proprietario?', 'Nao. A proposta e operar em tablets Android comuns, reduzindo dependencia de hardware caro.'],
-    ['Como funciona o upsell contextual?', 'A plataforma exibe adicionais, combos e upgrades de acordo com item, categoria, horario e regra comercial da unidade.'],
-    ['O pedido so vai para cozinha depois do pagamento?', 'Sim, o fluxo pode validar Pix ou NFC antes de imprimir ou enviar a comanda para producao.'],
-    ['Serve para franquias?', 'Sim. A arquitetura multitenant separa unidades, usuarios, dispositivos e relatorios.'],
+    ['Qiosq e uma marca de restaurante?', 'Não. A Qiosq é um software de autoatendimento para restaurantes, lanchonetes e operações de alto fluxo.'],
+    ['Preciso comprar um totem proprietario?', 'Não. A proposta é usar tablets Android comuns como pontos de pedido e pagamento.'],
+    ['Como a Qiosq ajuda a aumentar o pedido médio?', 'Durante o pedido, o sistema sugere adicionais, combos e upgrades de acordo com o item escolhido e as regras da loja.'],
+    ['O pedido pode ir para cozinha só depois do pagamento?', 'Sim. O fluxo pode confirmar Pix ou NFC antes de imprimir ou enviar a comanda para produção.'],
+    ['Serve para mais de uma unidade?', 'Sim. A Qiosq separa lojas, usuários, dispositivos e relatórios para cada operação.'],
     ['Da para operar com internet instavel?', 'O produto foi desenhado para operacao conectada, com tolerancia parcial para instabilidades curtas no ponto de pedido.']
   ];
 
@@ -229,9 +227,9 @@
     <a class="q-brand" href="#top" aria-label="Inicio Qiosq">
       <img src="/images/qiosq-logo-cropped.png" alt="Qiosq" width="220" height="160" />
     </a>
-    <nav class="q-nav" aria-label="Navegacao principal">
+    <nav class="q-nav" aria-label="Navegação principal">
       <a href="#infra">Infraestrutura</a>
-      <a href="#operacao">Operacao</a>
+      <a href="#operacao">Operação</a>
       <a href="#workflow">Workflow</a>
       <a href="#planos">Planos</a>
     </nav>
@@ -240,15 +238,15 @@
 
   <section id="top" class="q-hero q-shell" aria-labelledby="hero-title">
     <div class="q-hero-copy">
-      <p class="q-eyebrow">Infraestrutura SaaS para autoatendimento</p>
-      <h1 id="hero-title">Tablets comuns. Operação mais rápida.</h1>
+      <p class="q-eyebrow">Autoatendimento inteligente para estabelecimentos</p>
+      <h1 id="hero-title">Transforme tablets em terminais inteligentes de pedido e pagamento.</h1>
       <p>
-        Qiosq transforma Android tablets em sistemas de pedido, pagamento e upsell contextual para restaurantes,
-        lanchonetes e pequenos negócios alimentícios.
+        A Qiosq transforma tablets Android em pontos de autoatendimento para reduzir filas,
+        acelerar pagamentos e sugerir adicionais automaticamente durante o pedido.
       </p>
       <div class="q-actions" aria-label="Acoes principais">
         <a class="q-primary" href="#demo">Agendar demonstração</a>
-        <a class="q-secondary" href="#operacao">Ver operação</a>
+        <a class="q-secondary" href="#operacao">Ver como funciona</a>
       </div>
       <dl class="q-metrics" aria-label="Indicadores do produto">
         {#each metrics as metric}
@@ -328,11 +326,11 @@
 
   <section id="infra" class="q-section q-shell" aria-labelledby="infra-title">
     <div class="q-section-head">
-      <p class="q-eyebrow">Plataforma, não improviso</p>
-      <h2 id="infra-title">Infraestrutura operacional moderna movida por software inteligente.</h2>
+      <p class="q-eyebrow">Do balcão ao checkout</p>
+      <h2 id="infra-title">Um fluxo de pedido mais rápido, previsível e fácil de controlar.</h2>
       <p>
-        Qiosq conecta pedido, regra comercial, pagamento, impressão e painel em uma camada única para operar
-        autoatendimento com controle.
+        A Qiosq conecta cardápio, carrinho, pagamento, impressão e painel operacional em uma única experiência
+        para o cliente pedir sem travar o balcão.
       </p>
     </div>
     <div class="q-capability-grid">
@@ -389,11 +387,11 @@
   <section id="operacao" class="q-contrast-section" aria-labelledby="operation-title">
     <div class="q-shell q-operation-layout">
       <div>
-        <p class="q-eyebrow on-dark">Controle operacional</p>
-        <h2 id="operation-title">Menos fila visível. Mais eficiência acontecendo nos bastidores.</h2>
+        <p class="q-eyebrow on-dark">Operação em horário de pico</p>
+        <h2 id="operation-title">Atenda mais clientes sem transformar o balcão em gargalo.</h2>
         <p>
-          A experiência do cliente fica simples. A operação recebe dados estruturados, pagamento confirmado,
-          comanda roteada e recomendações que aumentam ticket sem depender do atendimento manual.
+          O cliente faz o pedido sozinho. A operação recebe pagamento confirmado, comanda roteada e dados claros
+          para cozinha, bar ou expedição trabalharem com menos ruído.
         </p>
       </div>
       <div class="q-control-panel" aria-label="Resumo de controle operacional">
@@ -438,7 +436,7 @@
   <section class="q-use-cases q-shell" aria-labelledby="use-title">
     <div>
       <p class="q-eyebrow">Onde Qiosq entra</p>
-      <h2 id="use-title">Para negócios que precisam vender mais rápido sem aumentar complexidade.</h2>
+      <h2 id="use-title">Para negócios onde fila, caixa e pedido manual viram custo.</h2>
     </div>
     <div class="q-use-grid">
       {#each useCases as useCase}
@@ -467,8 +465,10 @@
   <section id="demo" class="q-demo q-shell" aria-labelledby="demo-title">
     <div>
       <p class="q-eyebrow on-dark">Próximo passo</p>
-      <h2 id="demo-title">Veja como Qiosq encaixa no seu fluxo de pedido, pagamento e cozinha.</h2>
-      <p>Uma demonstração curta para mapear dispositivos, cardápio, meios de pagamento e operação por unidade.</p>
+      <h2 id="demo-title">Veja como a Qiosq encaixa no seu fluxo de pedido, pagamento e cozinha.</h2>
+      <p>
+        Em uma demonstração curta, mapeamos cardápio, dispositivos, pagamento, impressão e fluxo até a cozinha.
+      </p>
     </div>
     <form class="q-form" action="mailto:contato@qiosq.com.br" method="post" enctype="text/plain">
       <label>

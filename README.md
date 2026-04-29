@@ -69,7 +69,7 @@ static/
    Navegacao principal com links para infraestrutura, operacao, workflow, planos e chamada para demo.
 
 2. Hero
-   Apresenta a promessa central: "Tablets comuns. Operacao mais rapida." Tambem exibe indicadores de produto, CTAs e um mockup de checkout em tablet.
+   Apresenta a promessa central: "Tablets comuns. Operação mais rapida." Tambem exibe indicadores de produto, CTAs e um mockup de checkout em tablet.
 
 3. Infraestrutura
    Lista capacidades do produto: autoatendimento, checkout inteligente, pagamentos, multitenancy, fila operacional e dados comerciais.
