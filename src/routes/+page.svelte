@@ -173,6 +173,17 @@
   };
 
   const jsonLdScript = `<script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, '\\u003c')}<\/script>`;
+
+  /** @type {HTMLDivElement | undefined} */
+  let capabilityTrack;
+
+  /** @param {number} direction */
+  function moveCapabilityCarousel(direction) {
+    capabilityTrack?.scrollBy({
+      left: direction * capabilityTrack.clientWidth * 0.82,
+      behavior: 'smooth'
+    });
+  }
 </script>
 
 <svelte:head>
@@ -333,54 +344,114 @@
         para o cliente pedir sem travar o balcão.
       </p>
     </div>
-    <div class="q-capability-grid">
-      {#each capabilities as item}
-        <article>
-          <span class="q-capability-mark" aria-hidden="true">
-            {#if item.icon === 'tablet'}
-              <svg viewBox="0 0 24 24" role="img">
-                <rect x="6" y="3" width="12" height="18" rx="3"></rect>
-                <path d="M10 17h4"></path>
-              </svg>
-            {:else if item.icon === 'spark'}
-              <svg viewBox="0 0 24 24" role="img">
-                <path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"></path>
-                <path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"></path>
-              </svg>
-            {:else if item.icon === 'payment'}
-              <svg viewBox="0 0 24 24" role="img">
-                <rect x="3" y="6" width="18" height="12" rx="3"></rect>
-                <path d="M3 10h18"></path>
-                <path d="M7 15h4"></path>
-              </svg>
-            {:else if item.icon === 'tenant'}
-              <svg viewBox="0 0 24 24" role="img">
-                <rect x="4" y="5" width="7" height="7" rx="2"></rect>
-                <rect x="13" y="5" width="7" height="7" rx="2"></rect>
-                <rect x="8.5" y="14" width="7" height="5" rx="2"></rect>
-              </svg>
-            {:else if item.icon === 'queue'}
-              <svg viewBox="0 0 24 24" role="img">
-                <path d="M5 7h14"></path>
-                <path d="M5 12h14"></path>
-                <path d="M5 17h8"></path>
-                <circle cx="18" cy="17" r="1"></circle>
-              </svg>
-            {:else}
-              <svg viewBox="0 0 24 24" role="img">
-                <path d="M5 19V9"></path>
-                <path d="M12 19V5"></path>
-                <path d="M19 19v-7"></path>
-                <path d="M4 19h16"></path>
-              </svg>
+    <div class="q-capability-carousel" aria-label="Recursos da Qiosq em carrossel">
+      <div class="q-carousel-controls" aria-label="Controles do carrossel de recursos">
+        <button type="button" aria-label="Recurso anterior" on:click={() => moveCapabilityCarousel(-1)}>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6"></path>
+          </svg>
+        </button>
+        <button type="button" aria-label="Proximo recurso" on:click={() => moveCapabilityCarousel(1)}>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 6l6 6-6 6"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="q-capability-track" bind:this={capabilityTrack}>
+        {#each capabilities as item, index}
+          <article
+            class={`q-capability-card q-capability-${item.icon}`}
+            class:q-bento-primary={index === 0}
+            class:q-bento-wide={index === 1 || index === 5}
+            class:q-bento-tall={index === 3}
+          >
+            <span class="q-capability-mark" aria-hidden="true">
+              {#if item.icon === 'tablet'}
+                <svg viewBox="0 0 24 24" role="img">
+                  <rect x="6" y="3" width="12" height="18" rx="3"></rect>
+                  <path d="M10 17h4"></path>
+                </svg>
+              {:else if item.icon === 'spark'}
+                <svg viewBox="0 0 24 24" role="img">
+                  <path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"></path>
+                  <path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"></path>
+                </svg>
+              {:else if item.icon === 'payment'}
+                <svg viewBox="0 0 24 24" role="img">
+                  <rect x="3" y="6" width="18" height="12" rx="3"></rect>
+                  <path d="M3 10h18"></path>
+                  <path d="M7 15h4"></path>
+                </svg>
+              {:else if item.icon === 'tenant'}
+                <svg viewBox="0 0 24 24" role="img">
+                  <rect x="4" y="5" width="7" height="7" rx="2"></rect>
+                  <rect x="13" y="5" width="7" height="7" rx="2"></rect>
+                  <rect x="8.5" y="14" width="7" height="5" rx="2"></rect>
+                </svg>
+              {:else if item.icon === 'queue'}
+                <svg viewBox="0 0 24 24" role="img">
+                  <path d="M5 7h14"></path>
+                  <path d="M5 12h14"></path>
+                  <path d="M5 17h8"></path>
+                  <circle cx="18" cy="17" r="1"></circle>
+                </svg>
+              {:else}
+                <svg viewBox="0 0 24 24" role="img">
+                  <path d="M5 19V9"></path>
+                  <path d="M12 19V5"></path>
+                  <path d="M19 19v-7"></path>
+                  <path d="M4 19h16"></path>
+                </svg>
+              {/if}
+              <i></i>
+            </span>
+            <small class="q-capability-signal">{item.signal}</small>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+            {#if index === 0}
+              <div class="q-capability-visual q-visual-tablet" aria-hidden="true">
+                <span class="q-visual-camera"></span>
+                <div>
+                  <strong>Pedido #2048</strong>
+                  <small>Pix confirmado</small>
+                </div>
+                <span class="q-visual-home"></span>
+              </div>
+            {:else if index === 1}
+              <div class="q-capability-visual q-visual-offer" aria-hidden="true">
+                <span>Combo</span>
+                <strong>+ sobremesa</strong>
+                <small>Upgrade aceito</small>
+              </div>
+            {:else if index === 2}
+              <div class="q-capability-visual q-visual-card" aria-hidden="true">
+                <span></span>
+                <strong>•••• 2048</strong>
+                <small>Pagamento aprovado</small>
+              </div>
+            {:else if index === 3}
+              <div class="q-capability-visual q-visual-store" aria-hidden="true">
+                <span></span>
+                <strong>Unidade Centro</strong>
+                <small>4 tablets online</small>
+              </div>
+            {:else if index === 4}
+              <div class="q-capability-visual q-visual-ticket" aria-hidden="true">
+                <strong>#2050</strong>
+                <span>Chapa</span>
+                <small>Fila sincronizada</small>
+              </div>
+            {:else if index === 5}
+              <div class="q-capability-visual q-visual-dashboard" aria-hidden="true">
+                <span style="--bar: 72%"></span>
+                <span style="--bar: 48%"></span>
+                <span style="--bar: 86%"></span>
+              </div>
             {/if}
-            <i></i>
-          </span>
-          <small class="q-capability-signal">{item.signal}</small>
-          <h3>{item.title}</h3>
-          <p>{item.text}</p>
-        </article>
-      {/each}
+          </article>
+        {/each}
+      </div>
     </div>
   </section>
 
