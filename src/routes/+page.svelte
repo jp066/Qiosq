@@ -4,7 +4,7 @@
 
   const siteUrl = 'https://qiosq.com.br';
   const pageTitle = 'Qiosq | Autoatendimento para Restaurantes';
-  const pageDescription = 'Transforme tablets Android em pontos de autoatendimento para reduzir filas, vender mais por pedido e acelerar pagamentos em restaurantes, lanchonetes e operações de alto fluxo.';
+  const pageDescription = 'Transforme tablets em pontos de autoatendimento para pedido e pagamento.';
   const ogImage = `${siteUrl}/images/qiosq-logo-cropped.png`;
 
   const metrics = [
