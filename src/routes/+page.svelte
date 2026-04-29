@@ -30,37 +30,37 @@
       title: 'Tablet virando ponto de venda',
       signal: 'Sem totem proprietário',
       text: 'Use dispositivos Android para receber pedidos, montar carrinho, confirmar pagamento e acompanhar status.'
-    }
+    },
     {
       icon: 'spark',
       title: 'Venda adicional automática',
       signal: 'Mais ticket médio',
       text: 'Combos, adicionais e upgrades aparecem no checkout sem depender da abordagem da equipe, apenas do historico do usuário.'
-    }
+    },
     {
       icon: 'payment',
       title: 'Pagamento integrado',
       signal: 'Pagamento antes da produção',
       text: 'Pix, NFC e confirmação de pagamento entram no fluxo antes do pedido seguir para a cozinha.'
-    }
+    },
     {
       icon: 'tenant',
       title: 'Controle por unidade',
       signal: 'Pronto para crescer',
       text: 'Organize lojas, usuários, dispositivos e permissões sem misturar operações diferentes.'
-    }
+    },
     {
       icon: 'queue',
       title: 'Pedido direto para operação',
       signal: 'Comanda roteada',
       text: 'Pedidos chegam com status claro e menos retrabalho manual.'
-    }
+    },
     {
       icon: 'chart',
       title: 'Indicadores que mostram o gargalo',
       signal: 'Decisão com dados',
       text: 'Veja pedido médio, itens mais vendidos, horários de pico e desempenho por loja.'
-    }
+    },
   ];
 
   const workflow = [
