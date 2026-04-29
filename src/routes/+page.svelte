@@ -264,7 +264,7 @@
     <div class="q-hero-visual" aria-label="Mockup operacional Qiosq">
       <div class="q-device">
         <div class="q-device-top">
-          <span>Qiosq Kiosk</span>
+          <span>Qiosq</span>
           <strong>Tablet A-03</strong>
         </div>
         <div class="q-kiosk-ui">
